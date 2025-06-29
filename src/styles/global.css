@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+
+@theme {
+    --font-body: "Montserrat", sans-serif;
+    --font-heading: "Space Grotesk", sans-serif;
+}
+
+@layer base {
+    body {
+        @apply font-body;
+    }
+}
+
+@layer utilities {}

@@ -1,11 +1,198 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import HeroBackground from "../assets/images/hero-background.avif";
+import PanoramicPrecision from "../assets/images/panoramic-precision.avif";
+import ResolutionRedefined from "../assets/images/resolution-redefined.avif";
 ---
 
 <Layout>
-	<Welcome />
+  <main>
+    <section
+      id="hero"
+      class="h-screen bg-contain bg-no-repeat"
+      style={`background-image: url(${HeroBackground.src});`}
+    >
+    </section>
+    <section
+      id="redefining-display"
+      class="container max-w-screen-2xl mx-auto px-20 py-24"
+    >
+      <div class="flex flex-col">
+        <div class="w-full h-px bg-black/20">
+          <div class="w-1/5 h-px bg-black"></div>
+        </div>
+        <h3 class="text-xl mt-12 mb-10 font-light font-heading">
+          Redefining Display
+        </h3>
+        <div class="w-full">
+          <h1
+            class="text-5xl md:text-7xl leading-tight mb-16 w-full font-normal"
+          >
+            Illuminate Anywhere Anytime
+          </h1>
+          <p
+            class="text-sm md:text-base max-w-md ml-auto w-full -translate-x-1/4"
+          >
+            Welcome to a world where clarity meets innovation, where every
+            detail matters, and where CAN Display becomes the canvas for your
+            visual masterpiece.
+          </p>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row gap-8 mt-16">
+        <article
+          class="bg-white rounded-3xl shadow-2xl shadow-black/10 flex-1 flex flex-col overflow-hidden"
+        >
+          <div class="p-12 mb-8">
+            <h4 class="font-heading text-lg font-normal mb-6">
+              RESOLUTION REDEFINED
+            </h4>
+            <div class="w-full h-px bg-black/20 mb-8"></div>
+            <p class="text-base mb-8">
+              Elevate your viewing experience with IPS Panel's HD brilliance or
+              dive into the future with 4K resolution support, exclusively
+              available in our 50", 55" and above screen sizes. CAN Display
+              ensures every detail is brought to life on your screen.
+            </p>
+          </div>
+          <img
+            src={ResolutionRedefined.src}
+            alt="Resolution Redefined"
+            class="w-full h-full object-cover"
+          />
+        </article>
+        <article
+          class="bg-white rounded-3xl shadow-2xl shadow-black/10 flex-1 flex flex-col overflow-hidden translate-y-16"
+        >
+          <div class="p-12 mb-8">
+            <h4 class="font-heading text-lg font-normal mb-6">
+              PANORAMIC PRECISION
+            </h4>
+            <div class="w-full h-px bg-black/20 mb-8"></div>
+            <p class="text-base mb-8">
+              Enjoy a mesmerizing 178-degree vision angle, allowing you to
+              capture every detail from any corner of the room. Immerse yourself
+              in a display that goes beyond the ordinary.
+            </p>
+          </div>
+          <img
+            src={PanoramicPrecision.src}
+            alt="Panoramic Precision"
+            class="w-full h-full object-cover"
+          />
+        </article>
+      </div>
+      <div class="flex flex-col md:flex-row gap-8 mt-32">
+        <article
+          class="bg-white rounded-3xl shadow-2xl shadow-black/10 flex-1 flex flex-col overflow-hidden"
+        >
+          <div class="p-12 mb-8">
+            <h4 class="font-heading text-lg font-normal mb-6">
+              VERSATILITY IN ORIENTATION
+            </h4>
+            <div class="w-full h-px bg-black/20 mb-8"></div>
+            <p class="text-base mb-8">
+              Choose your style with CAN Display - available in both vertical
+              and horizontal orientations. Tailor your visual setup to match
+              your unique space and preferences.
+            </p>
+          </div>
+          <img
+            src={ResolutionRedefined.src}
+            alt="Resolution Redefined"
+            class="w-full h-full object-cover"
+          />
+        </article>
+        <article
+          class="bg-white rounded-3xl shadow-2xl shadow-black/10 flex-1 flex flex-col overflow-hidden translate-y-16"
+        >
+          <div class="p-12 mb-8">
+            <h4 class="font-heading text-lg font-normal mb-6">
+              SLEEK REMOTE CONTROL
+            </h4>
+            <div class="w-full h-px bg-black/20 mb-8"></div>
+            <p class="text-base mb-8">
+              Take command with our sleek remote control, designed for
+              convenience. Operate basic functions effortlessly, ensuring your
+              CAN Display experience is as smooth as the visuals it delivers.
+            </p>
+          </div>
+          <img
+            src={PanoramicPrecision.src}
+            alt="Panoramic Precision"
+            class="w-full h-full object-cover"
+          />
+        </article>
+      </div>
+    </section>
+    <section
+      id="iq-world"
+      class="container max-w-screen-2xl mx-auto px-20 py-24"
+    >
+      <div class="flex flex-col">
+        <div class="w-full h-px bg-black/20">
+          <div class="w-1/5 h-px bg-black"></div>
+        </div>
+        <h3 class="text-xl mt-12 mb-10 font-light font-heading">IQ WORLD</h3>
+        <div class="w-full">
+          <h1
+            class="text-5xl md:text-7xl leading-tight mb-16 w-full font-normal"
+          >
+            Seamless User Experience
+          </h1>
+          <p
+            class="text-sm md:text-base max-w-md ml-auto w-full -translate-x-1/4"
+          >
+            Empower yourself with the IQ World app's robust features. Manage
+            screens efficiently with admin control, while clients enjoy a
+            seamless viewing experience. It's control at your fingertips.
+          </p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24 mt-24">
+        <div class="flex flex-col justify-between">
+          <img
+            src={ResolutionRedefined.src}
+            alt="Real-Time Information"
+            class="w-full h-auto object-cover rounded-2xl"
+          />
+        </div>
+        <div class="flex flex-col justify-center p-0 md:pl-12">
+          <h4 class="font-heading text-lg font-normal mb-6">
+            REAL-TIME INFORMATION
+          </h4>
+          <div class="w-full h-px bg-black/20 mb-8"></div>
+          <p class="text-base mb-8">
+            A cloud-based software that give you a centralised control hub to
+            monitor multiple screens effortlessly from a single point, giving
+            you unparalleled control. Feature rich application with schedule
+            management, split-screen options, text scrolling, inbuilt image and
+            video editing, and more. It's a suite of tools designed to enhance
+            your experience with security.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center p-0 md:pr-12 order-2 md:order-3"
+        >
+          <h4 class="font-heading text-lg font-normal mb-6">TOTAL CONTROL</h4>
+          <div class="w-full h-px bg-black/20 mb-8"></div>
+          <p class="text-base mb-8">
+            Experience unparalleled convenience with IQ World Mobile App – your
+            on-the-go command center. Effortlessly manage tasks, run the
+            schedule, and more with just a tap. Simplify your life, anytime,
+            anywhere.
+          </p>
+        </div>
+        <div class="flex flex-col justify-between order-1 md:order-4">
+          <img
+            src={PanoramicPrecision.src}
+            alt="Total Control"
+            class="w-full h-auto object-cover rounded-2xl"
+          />
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
