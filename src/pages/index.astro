@@ -1,196 +1,206 @@
 ---
-import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
-
-import HeroBackground from "../assets/images/hero-background.avif";
-import PanoramicPrecision from "../assets/images/panoramic-precision.avif";
-import ResolutionRedefined from "../assets/images/resolution-redefined.avif";
+import HeroBackground from "../assets/images/home/hero-background.avif";
+import HeroOverlay from "../assets/images/home/hero-overlay.avif";
+import GlassScreen from "../assets/images/home/glass-screen.avif";
+import ResolutionRedefined from "../assets/images/home/resolution-redefined.avif";
 ---
 
-<Layout>
+<Layout header="dark">
   <main>
-    <section
-      id="hero"
-      class="h-screen bg-contain bg-no-repeat"
-      style={`background-image: url(${HeroBackground.src});`}
-    >
+    <section id="hero">
+      <img
+        src={HeroOverlay.src}
+        alt="Hero Overlay"
+        class="w-full h-full object-cover -mt-72"
+      />
+      <img
+        src={HeroBackground.src}
+        alt="Hero Background"
+        class="absolute top-16 left-1/2 -translate-x-1/2 w-10/12 h-full object-cover"
+      />
     </section>
-    <section
-      id="redefining-display"
-      class="container max-w-screen-2xl mx-auto px-20 py-24"
-    >
-      <div class="flex flex-col">
+    <section class="bg-black text-white">
+      <div class="container max-w-screen-2xl mx-auto px-20 pt-24">
+        <div class="w-full h-px bg-white/20">
+          <div class="w-1/5 h-px bg-white"></div>
+        </div>
+        <p class="font-heading text-xl font-light mt-12">WHY CAN ?</p>
+        <h2 class="text-7xl mt-10 leading-tight">
+          We're Here to Revolutionize the World of Digital Displays
+        </h2>
+        <div class="grid grid-cols-2 mt-24">
+          <div class="flex flex-col justify-center">
+            <p class="max-w-96">
+              Dynamic Contrast and an IPS Panel <strong>Toughened glass</strong>
+              with a viewing angle of 178 degrees. Standard 1080p High Definition
+              screens available in 32", 43", and 4K screens in 55", and above sizes
+              to provide a clear, crisp image.
+            </p>
+          </div>
+          <img
+            src={GlassScreen.src}
+            alt="Glass Screen"
+            class="w-full h-auto scale-105 -translate-y-3"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="bg-gray-50 text-black">
+      <div class="container max-w-screen-2xl mx-auto px-20 py-24">
         <div class="w-full h-px bg-black/20">
           <div class="w-1/5 h-px bg-black"></div>
         </div>
-        <h3 class="text-xl mt-12 mb-10 font-light font-heading">
-          Redefining Display
-        </h3>
-        <div class="w-full">
-          <h1
-            class="text-5xl md:text-7xl leading-tight mb-16 w-full font-normal"
-          >
-            Illuminate Anywhere Anytime
-          </h1>
-          <p
-            class="text-sm md:text-base max-w-md ml-auto w-full -translate-x-1/4"
-          >
-            Welcome to a world where clarity meets innovation, where every
-            detail matters, and where CAN Display becomes the canvas for your
-            visual masterpiece.
-          </p>
-        </div>
-      </div>
-      <div class="flex flex-col md:flex-row gap-8 mt-16">
+        <p class="font-heading text-xl font-light mt-12">CAN SIGNAGE DISPLAY</p>
+        <h2 class="text-7xl mt-10 leading-tight">
+          Fully Autonomous, Uncompromisingly Sustainable
+        </h2>
         <article
-          class="bg-white rounded-3xl shadow-2xl shadow-black/10 flex-1 flex flex-col overflow-hidden"
+          class="grid grid-cols-2 mt-24 bg-white shadow-black/5 rounded-3xl overflow-hidden"
         >
-          <div class="p-12 mb-8">
-            <h4 class="font-heading text-lg font-normal mb-6">
-              RESOLUTION REDEFINED
-            </h4>
-            <div class="w-full h-px bg-black/20 mb-8"></div>
-            <p class="text-base mb-8">
-              Elevate your viewing experience with IPS Panel's HD brilliance or
-              dive into the future with 4K resolution support, exclusively
-              available in our 50", 55" and above screen sizes. CAN Display
-              ensures every detail is brought to life on your screen.
-            </p>
+          <div class="flex p-12 gap-16">
+            <div class="h-full w-px bg-black/10 shrink-0"></div>
+            <div class="flex-1 flex flex-col justify-center">
+              <h3
+                class="text-xl font-heading font-normal tracking-wide mb-8 text-black"
+              >
+                RESOLUTION REDEFINED
+              </h3>
+              <div class="flex items-end gap-6 mb-4">
+                <span class="text-5xl font-light text-black">16.7 M</span>
+                <span class="text-xl text-gray-400 font-light mb-2"
+                  >Colours</span
+                >
+              </div>
+              <hr class="my-2 border-black/10" />
+              <div class="flex items-end gap-6 mb-4 mt-4">
+                <span class="text-5xl font-light text-black">380 Nits</span>
+                <span class="text-xl text-gray-400 font-light mb-2"
+                  >LED Brightness</span
+                >
+              </div>
+              <p class="text-base text-black mt-8 mb-8 leading-relaxed">
+                Experience the full potential of high-definition display screens
+                with a myriad of benefits. Notably, these screens offer
+                unparalleled advantages, starting with the production of
+                exceptionally clear images at heightened resolutions. Dive into
+                the world of 4K, where colors come to life with unrivaled
+                crispness, rendering it ideal for professional applications.
+                Plus, a superior contrast ratio ensures a brighter and more
+                vivid display even from a distance. What's more, the durability
+                of the panel materials guarantees a long-lasting impact. And
+                when it comes to energy efficiency, LED displays lead the way,
+                saving you money while also making a positive impact on the
+                environment.
+              </p>
+              <a
+                href="#"
+                class="flex items-center gap-2 text-gray-700 w-64 hover:text-black transition-colors group border-b border-black/20 pb-2 pr-2 mt-2"
+              >
+                <span class="tracking-wide text-base font-heading font-normal"
+                  >READ MORE</span
+                >
+                <span class="transition-transform group-hover:rotate-45 ml-auto"
+                  >→</span
+                >
+              </a>
+            </div>
           </div>
           <img
             src={ResolutionRedefined.src}
             alt="Resolution Redefined"
-            class="w-full h-full object-cover"
+            class="w-full h-auto"
           />
         </article>
         <article
-          class="bg-white rounded-3xl shadow-2xl shadow-black/10 flex-1 flex flex-col overflow-hidden translate-y-16"
+          class="grid grid-cols-2 mt-24 bg-white shadow-black/5 rounded-3xl overflow-hidden"
         >
-          <div class="p-12 mb-8">
-            <h4 class="font-heading text-lg font-normal mb-6">
-              PANORAMIC PRECISION
-            </h4>
-            <div class="w-full h-px bg-black/20 mb-8"></div>
-            <p class="text-base mb-8">
-              Enjoy a mesmerizing 178-degree vision angle, allowing you to
-              capture every detail from any corner of the room. Immerse yourself
-              in a display that goes beyond the ordinary.
-            </p>
-          </div>
-          <img
-            src={PanoramicPrecision.src}
-            alt="Panoramic Precision"
-            class="w-full h-full object-cover"
-          />
-        </article>
-      </div>
-      <div class="flex flex-col md:flex-row gap-8 mt-32">
-        <article
-          class="bg-white rounded-3xl shadow-2xl shadow-black/10 flex-1 flex flex-col overflow-hidden"
-        >
-          <div class="p-12 mb-8">
-            <h4 class="font-heading text-lg font-normal mb-6">
-              VERSATILITY IN ORIENTATION
-            </h4>
-            <div class="w-full h-px bg-black/20 mb-8"></div>
-            <p class="text-base mb-8">
-              Choose your style with CAN Display - available in both vertical
-              and horizontal orientations. Tailor your visual setup to match
-              your unique space and preferences.
-            </p>
-          </div>
           <img
             src={ResolutionRedefined.src}
             alt="Resolution Redefined"
-            class="w-full h-full object-cover"
+            class="w-full h-auto"
           />
-        </article>
-        <article
-          class="bg-white rounded-3xl shadow-2xl shadow-black/10 flex-1 flex flex-col overflow-hidden translate-y-16"
-        >
-          <div class="p-12 mb-8">
-            <h4 class="font-heading text-lg font-normal mb-6">
-              SLEEK REMOTE CONTROL
-            </h4>
-            <div class="w-full h-px bg-black/20 mb-8"></div>
-            <p class="text-base mb-8">
-              Take command with our sleek remote control, designed for
-              convenience. Operate basic functions effortlessly, ensuring your
-              CAN Display experience is as smooth as the visuals it delivers.
-            </p>
+          <div class="flex p-12 gap-16">
+            
+            <div class="flex-1 flex flex-col justify-center">
+              <h3
+                class="text-xl font-heading font-normal tracking-wide mb-8 text-black"
+              >
+                RESOLUTION REDEFINED
+              </h3>
+              <div class="flex items-end gap-6 mb-4">
+                <span class="text-5xl font-light text-black">16.7 M</span>
+                <span class="text-xl text-gray-400 font-light mb-2"
+                  >Colours</span
+                >
+              </div>
+              <hr class="my-2 border-black/10" />
+              <div class="flex items-end gap-6 mb-4 mt-4">
+                <span class="text-5xl font-light text-black">380 Nits</span>
+                <span class="text-xl text-gray-400 font-light mb-2"
+                  >LED Brightness</span
+                >
+              </div>
+              <p class="text-base text-black mt-8 mb-8 leading-relaxed">
+                Experience the full potential of high-definition display screens
+                with a myriad of benefits. Notably, these screens offer
+                unparalleled advantages, starting with the production of
+                exceptionally clear images at heightened resolutions. Dive into
+                the world of 4K, where colors come to life with unrivaled
+                crispness, rendering it ideal for professional applications.
+                Plus, a superior contrast ratio ensures a brighter and more
+                vivid display even from a distance. What's more, the durability
+                of the panel materials guarantees a long-lasting impact. And
+                when it comes to energy efficiency, LED displays lead the way,
+                saving you money while also making a positive impact on the
+                environment.
+              </p>
+              <a
+                href="#"
+                class="flex items-center gap-2 text-gray-700 w-64 hover:text-black transition-colors group border-b border-black/20 pb-2 pr-2 mt-2"
+              >
+                <span class="tracking-wide text-base font-heading font-normal"
+                  >READ MORE</span
+                >
+                <span class="transition-transform group-hover:rotate-45 ml-auto"
+                  >→</span
+                >
+              </a>
+            </div>
+            <div class="h-full w-px bg-black/10 shrink-0"></div>
           </div>
-          <img
-            src={PanoramicPrecision.src}
-            alt="Panoramic Precision"
-            class="w-full h-full object-cover"
-          />
         </article>
       </div>
     </section>
-    <section
-      id="iq-world"
-      class="container max-w-screen-2xl mx-auto px-20 py-24"
-    >
-      <div class="flex flex-col">
-        <div class="w-full h-px bg-black/20">
-          <div class="w-1/5 h-px bg-black"></div>
+    <section class="bg-black text-white">
+      <div class="container max-w-screen-2xl mx-auto px-20 py-24">
+        <div class="w-full h-px bg-white/20">
+          <div class="w-1/5 h-px bg-white"></div>
         </div>
-        <h3 class="text-xl mt-12 mb-10 font-light font-heading">IQ WORLD</h3>
-        <div class="w-full">
-          <h1
-            class="text-5xl md:text-7xl leading-tight mb-16 w-full font-normal"
+        <p class="font-heading text-xl font-light mt-12">
+          WHICH CAN IS RIGHT FOR YOU?
+        </p>
+        <h2 class="text-7xl mt-10 leading-tight">
+          Different Styles, For Different Spaces
+        </h2>
+        <div class="grid grid-cols-3 gap-8 max-w-5xl mx-auto mt-24">
+          <article
+            class="bg-white text-black brightness-75 hover:brightness-100 rounded-2xl p-6"
           >
-            Seamless User Experience
-          </h1>
-          <p
-            class="text-sm md:text-base max-w-md ml-auto w-full -translate-x-1/4"
+            <p class="text-sm font-medium mb-px">CANLit</p>
+            <p>Best and brightest</p>
+          </article>
+          <article
+            class="bg-white text-black brightness-75 hover:brightness-100 rounded-2xl p-6"
           >
-            Empower yourself with the IQ World app's robust features. Manage
-            screens efficiently with admin control, while clients enjoy a
-            seamless viewing experience. It's control at your fingertips.
-          </p>
-        </div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24 mt-24">
-        <div class="flex flex-col justify-between">
-          <img
-            src={ResolutionRedefined.src}
-            alt="Real-Time Information"
-            class="w-full h-auto object-cover rounded-2xl"
-          />
-        </div>
-        <div class="flex flex-col justify-center p-0 md:pl-12">
-          <h4 class="font-heading text-lg font-normal mb-6">
-            REAL-TIME INFORMATION
-          </h4>
-          <div class="w-full h-px bg-black/20 mb-8"></div>
-          <p class="text-base mb-8">
-            A cloud-based software that give you a centralised control hub to
-            monitor multiple screens effortlessly from a single point, giving
-            you unparalleled control. Feature rich application with schedule
-            management, split-screen options, text scrolling, inbuilt image and
-            video editing, and more. It's a suite of tools designed to enhance
-            your experience with security.
-          </p>
-        </div>
-        <div
-          class="flex flex-col justify-center p-0 md:pr-12 order-2 md:order-3"
-        >
-          <h4 class="font-heading text-lg font-normal mb-6">TOTAL CONTROL</h4>
-          <div class="w-full h-px bg-black/20 mb-8"></div>
-          <p class="text-base mb-8">
-            Experience unparalleled convenience with IQ World Mobile App – your
-            on-the-go command center. Effortlessly manage tasks, run the
-            schedule, and more with just a tap. Simplify your life, anytime,
-            anywhere.
-          </p>
-        </div>
-        <div class="flex flex-col justify-between order-1 md:order-4">
-          <img
-            src={PanoramicPrecision.src}
-            alt="Total Control"
-            class="w-full h-auto object-cover rounded-2xl"
-          />
+            <p class="text-sm font-medium mb-px">CANMount</p>
+            <p>True-to-life display</p>
+          </article>
+          <article
+            class="bg-white text-black brightness-75 hover:brightness-100 rounded-2xl p-6"
+          >
+            <p class="text-sm font-medium mb-px">CANVue</p>
+          </article>
         </div>
       </div>
     </section>

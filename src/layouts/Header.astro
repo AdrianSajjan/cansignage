@@ -1,21 +1,32 @@
 ---
 import Brand from "../assets/icons/brand.svg";
+
+
+const { theme = 'light' } = Astro.props;
 ---
 
-<script>
+<script define:vars={{ theme }}>
   if (typeof window !== 'undefined') {
     window.addEventListener('scroll', () => {
-      const header = document.getElementById('main-header')!;
+      const header = document.getElementById('main-header');
+      
       if(window.scrollY > 500) {
         header.classList.remove('opacity-100');
         header.classList.add('opacity-0')      
       } else if (window.scrollY < 50) {
         header.classList.remove('bg-white');
+        header.classList.remove('bg-black');
         header.classList.add('opacity-100');
         header.classList.remove('opacity-0');
         header.classList.add('bg-transparent');
       } else  {
-        header.classList.add('bg-white');
+        if (theme === 'dark') {
+          header.classList.add('bg-black');
+          header.classList.remove('bg-white');
+        } else {
+          header.classList.add('bg-white');
+          header.classList.remove('bg-black');
+        }
         header.classList.add('opacity-100');
         header.classList.remove('opacity-0');
         header.classList.remove('bg-transparent');
@@ -24,15 +35,14 @@ import Brand from "../assets/icons/brand.svg";
   }
 </script>
 
-<header id="main-header" class="fixed left-0 top-0 w-full z-50 transition-all opacity-100 duration-300 bg-transparent">
+<header id="main-header" data-theme={theme} class="fixed left-0 top-0 w-full z-50 transition-all opacity-100 duration-300 bg-transparent">
   <div class="container max-w-screen-2xl mx-auto flex items-center justify-between px-20">
-    <img src={Brand.src} class="size-32" />
+    <img src={Brand.src} data-theme={theme} class="size-28 transition-all duration-300 data-[theme=dark]:brightness-0 data-[theme=dark]:invert" />
     <nav class="flex items-center space-x-8">
-      <a href="/" class="text-black">Home</a>
-      <a href="#" class="text-black">Technology</a>
-      <a href="#" class="text-black">Blog</a>
-      <a href="#" class="text-black">Contact</a>
-      <a href="#" class="ml-6 px-6 py-2 bg-black text-white rounded-full text-base transition hover:bg-gray-800">IQ WORLD</a>
+      <a href="/" data-theme={theme} class="text-black data-[theme=dark]:text-white">Home</a>
+      <a href="/technology" data-theme={theme} class="text-black data-[theme=dark]:text-white">Technology</a>
+      <a href="#" data-theme={theme} class="text-black data-[theme=dark]:text-white">Contact</a>
+      <a href="/" data-theme={theme} class="ml-6 px-6 py-2 bg-black text-white rounded-full text-base transition hover:bg-gray-800 data-[theme=dark]:bg-white data-[theme=dark]:text-black data-[theme=dark]:hover:bg-gray-200">IQ WORLD</a>
     </nav>
   </div>
 </header>
