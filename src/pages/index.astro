@@ -1,8 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HeroBackground from "../assets/images/home/hero-background.avif";
+import Screenshot from "../assets/images/home/screenshot.png";
+import IQWorldApp from "../assets/images/home/iqworldapp.avif";
 import HeroOverlay from "../assets/images/home/hero-overlay.avif";
 import GlassScreen from "../assets/images/home/glass-screen.avif";
+import HeroBackground from "../assets/images/home/hero-background.avif";
 import ResolutionRedefined from "../assets/images/home/resolution-redefined.avif";
 ---
 
@@ -59,7 +61,9 @@ import ResolutionRedefined from "../assets/images/home/resolution-redefined.avif
           class="grid grid-cols-2 mt-24 bg-white shadow-black/5 rounded-3xl overflow-hidden"
         >
           <div class="flex p-12 gap-16">
-            <div class="h-full w-px bg-black/10 shrink-0"></div>
+            <div class="h-full w-px bg-black/20 shrink-0">
+              <div class="w-full h-1/2 bg-black"></div>
+            </div>
             <div class="flex-1 flex flex-col justify-center">
               <h3
                 class="text-xl font-heading font-normal tracking-wide mb-8 text-black"
@@ -68,14 +72,14 @@ import ResolutionRedefined from "../assets/images/home/resolution-redefined.avif
               </h3>
               <div class="flex items-end gap-6 mb-4">
                 <span class="text-5xl font-light text-black">16.7 M</span>
-                <span class="text-xl text-gray-400 font-light mb-2"
+                <span class="text-xl text-gray-600 font-light mb-2"
                   >Colours</span
                 >
               </div>
-              <hr class="my-2 border-black/10" />
+              <hr class="my-2 border-black/30" />
               <div class="flex items-end gap-6 mb-4 mt-4">
                 <span class="text-5xl font-light text-black">380 Nits</span>
-                <span class="text-xl text-gray-400 font-light mb-2"
+                <span class="text-xl text-gray-600 font-light mb-2"
                   >LED Brightness</span
                 >
               </div>
@@ -115,59 +119,45 @@ import ResolutionRedefined from "../assets/images/home/resolution-redefined.avif
         <article
           class="grid grid-cols-2 mt-24 bg-white shadow-black/5 rounded-3xl overflow-hidden"
         >
-          <img
-            src={ResolutionRedefined.src}
-            alt="Resolution Redefined"
-            class="w-full h-auto"
-          />
+          <img src={IQWorldApp.src} alt="IQ World App" class="w-full h-auto" />
           <div class="flex p-12 gap-16">
-            
             <div class="flex-1 flex flex-col justify-center">
               <h3
                 class="text-xl font-heading font-normal tracking-wide mb-8 text-black"
               >
-                RESOLUTION REDEFINED
+                FEATURE RICH CONTROL CENTER
               </h3>
               <div class="flex items-end gap-6 mb-4">
-                <span class="text-5xl font-light text-black">16.7 M</span>
-                <span class="text-xl text-gray-400 font-light mb-2"
-                  >Colours</span
+                <span class="text-5xl font-light text-black">IQ World</span>
+                <span class="text-xl text-gray-600 font-light mb-2"
+                  >Display Screen Control App</span
                 >
               </div>
-              <hr class="my-2 border-black/10" />
-              <div class="flex items-end gap-6 mb-4 mt-4">
-                <span class="text-5xl font-light text-black">380 Nits</span>
-                <span class="text-xl text-gray-400 font-light mb-2"
-                  >LED Brightness</span
-                >
-              </div>
+              <hr class="my-2 border-black/30" />
               <p class="text-base text-black mt-8 mb-8 leading-relaxed">
-                Experience the full potential of high-definition display screens
-                with a myriad of benefits. Notably, these screens offer
-                unparalleled advantages, starting with the production of
-                exceptionally clear images at heightened resolutions. Dive into
-                the world of 4K, where colors come to life with unrivaled
-                crispness, rendering it ideal for professional applications.
-                Plus, a superior contrast ratio ensures a brighter and more
-                vivid display even from a distance. What's more, the durability
-                of the panel materials guarantees a long-lasting impact. And
-                when it comes to energy efficiency, LED displays lead the way,
-                saving you money while also making a positive impact on the
-                environment.
+                Introducing the IQ World app, a cloud-based powerhouse that
+                transforms your CAN Display into a centralized control hub.
+                Monitor multiple screens effortlessly from a single point,
+                giving you unparalleled control. Enjoy schedule management,
+                split-screen options, text scrolling, inbuilt image and video
+                editing, and more. It's a suite of tools designed to enhance
+                your interaction with CAN Display.
               </p>
               <a
                 href="#"
                 class="flex items-center gap-2 text-gray-700 w-64 hover:text-black transition-colors group border-b border-black/20 pb-2 pr-2 mt-2"
               >
                 <span class="tracking-wide text-base font-heading font-normal"
-                  >READ MORE</span
+                  >DOWNLOAD APK</span
                 >
                 <span class="transition-transform group-hover:rotate-45 ml-auto"
                   >→</span
                 >
               </a>
             </div>
-            <div class="h-full w-px bg-black/10 shrink-0"></div>
+            <div class="h-full w-px bg-black/20 shrink-0">
+              <div class="w-full h-1/2 bg-black"></div>
+            </div>
           </div>
         </article>
       </div>
@@ -189,17 +179,20 @@ import ResolutionRedefined from "../assets/images/home/resolution-redefined.avif
           >
             <p class="text-sm font-medium mb-px">CANLit</p>
             <p>Best and brightest</p>
+            <img src={Screenshot.src} alt="CANLit" class="mt-8" />
           </article>
           <article
             class="bg-white text-black brightness-75 hover:brightness-100 rounded-2xl p-6"
           >
             <p class="text-sm font-medium mb-px">CANMount</p>
             <p>True-to-life display</p>
+            <img src={Screenshot.src} alt="CANLit" class="mt-8" />
           </article>
           <article
             class="bg-white text-black brightness-75 hover:brightness-100 rounded-2xl p-6"
           >
             <p class="text-sm font-medium mb-px">CANVue</p>
+            <img src={Screenshot.src} alt="CANLit" class="mt-8" />
           </article>
         </div>
       </div>
