@@ -32,6 +32,8 @@ const { theme = "light" } = Astro.props;
       }
     });
   }
+
+
 </script>
 
 <header
@@ -40,14 +42,14 @@ const { theme = "light" } = Astro.props;
   class="fixed left-0 top-0 w-full z-50 transition-all opacity-100 duration-300 bg-transparent"
 >
   <div
-    class="container max-w-screen-2xl mx-auto flex items-center justify-between px-20"
+    class="container max-w-screen-2xl mx-auto flex items-center justify-between px-8 md:px-12 lg:px-16 xl:px-20"
   >
     <img
       src={Brand.src}
       data-theme={theme}
-      class="size-28 transition-all duration-300 data-[theme=dark]:brightness-0 data-[theme=dark]:invert"
+      class="size-20 md:size-24 lg:size-28 transition-all duration-300 data-[theme=dark]:brightness-0 data-[theme=dark]:invert"
     />
-    <nav class="flex items-center space-x-8">
+    <nav class="hidden md:flex items-center space-x-8">
       <a
         href="/"
         data-theme={theme}
@@ -69,6 +71,13 @@ const { theme = "light" } = Astro.props;
         class="ml-6 px-6 py-2 bg-black text-white rounded-full text-base transition hover:bg-gray-800 data-[theme=dark]:bg-white data-[theme=dark]:text-black data-[theme=dark]:hover:bg-gray-200"
         >IQ WORLD</a
       >
+    </nav>
+    <nav class="md:hidden">
+      <button class="flex flex-col gap-1.5" id="main-menu-button">
+        <div data-theme={theme} class="w-6 h-px bg-black data-[theme=dark]:bg-white"></div>
+        <div data-theme={theme} class="w-6 h-px bg-black data-[theme=dark]:bg-white"></div>
+        <div data-theme={theme} class="w-6 h-px bg-black data-[theme=dark]:bg-white"></div>
+      </button>
     </nav>
   </div>
 </header>
