@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Header from "../layouts/Header.astro";
 import Footer from "../layouts/Footer.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
 
 const props = Astro.props;
 ---
@@ -25,5 +26,6 @@ const props = Astro.props;
     <Header theme={props.header} />
     <slot />
     <Footer />
+    <WhatsAppButton />
   </body>
 </html>

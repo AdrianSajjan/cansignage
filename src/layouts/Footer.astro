@@ -2,23 +2,14 @@
 import Brand from "../assets/icons/brand.svg";
 ---
 
-<footer class="w-full border-black/10 bg-white mt-32 pt-16 pb-6">
-  <div class="container max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-16 xl:px-20 mb-48">
-    <h2 class="text-4xl md:text-5xl lg:text-6xl font-normal leading-tight mb-16 max-w-full">Be the First to Receive the Latest News From CAN.</h2>
-    <form class="flex flex-col md:flex-row items-start md:items-end gap-6 w-full max-w-full">
-      <div class="flex-1 w-full">
-        <label for="footer-email" class="block text-base text-gray-600 mb-2">Email *</label>
-        <input id="footer-email" type="email" required placeholder=" " class="w-full border-b border-black/30 bg-transparent py-3 px-0 text-lg focus:outline-none focus:border-black transition" />
-      </div>
-      <button type="submit" class="w-96 shrink-0 px-12 py-3 bg-black text-white rounded-full text-base font-heading font-medium transition hover:bg-gray-800">SUBSCRIBE</button>
-    </form>
-  </div>
+<footer class="w-full border-black/10 bg-white mt-10 pt-16 pb-6">
   <div class="container max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-16 xl:px-20 flex flex-col lg:flex-row lg:justify-between lg:items-start gap-40">
     <img src={Brand.src} alt="CAN Logo" class="w-32 mb-2" /> 
     <div class="flex flex-col md:flex-row gap-12 flex-1 justify-between">
       <div>
         <div class="font-medium mb-2">Home</div>
         <ul class="space-y-1 text-gray-700 text-base">
+          <li><a href="/products" class="hover:underline">Products</a></li>
           <li><a href="/technology" class="hover:underline">Technology</a></li>
           <li><a href="/contact" class="hover:underline">Contact</a></li>
         </ul>
@@ -42,14 +33,14 @@ import Brand from "../assets/icons/brand.svg";
       <div>
         <div class="font-medium mb-2 tracking-widest">CONTACT</div>
         <ul class="space-y-1 text-base">
-          <li><a href="mailto:sales@cansignage.com" class="underline hover:text-black">sales@cansignage.com</a></li>
-          <li>Tel: +91 91523 98498</li>
-          <li class="text-xs leading-5 mt-2">1st Floor, Bldg No. A4, Babosa Industrial Park, Saravali Village,<br/>Nashik-Mumbai Highway Bhiwandi,<br/>Maharashtra - 421302</li>
+          <li><a href="mailto:sales@cansignage.com" class="underline hover:text-black">sales@sorabent.com</a></li>
+          <li>Office: +65 6224 8816</li>
+          <li class="text-xs leading-5 mt-2">10, Ubi Crescent, Lobby E <br/> #02-93, Ubi Techpark, <br/>Singapore 408564.</li>
         </ul>
       </div>
     </div>
   </div>
   <div class="container max-w-screen-2xl mx-auto px-8 md:px-20 mt-12">
-    <div class="text-xs text-gray-500">© 2025 Lumocast Digital Signage Pvt. Ltd.</div>
+    <div class="text-xs text-gray-500">© 2025 Sorab Enterprise Pte. Ltd.</div>
   </div>
 </footer>
