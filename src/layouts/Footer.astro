@@ -1,10 +1,14 @@
 ---
 import Brand from "../assets/icons/brand.svg";
+import Sorab from "../assets/Sorab.png";
 ---
 
 <footer class="w-full border-black/10 bg-white mt-10 pt-16 pb-6">
   <div class="container max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-16 xl:px-20 flex flex-col lg:flex-row lg:justify-between lg:items-start gap-40">
-    <img src={Brand.src} alt="CAN Logo" class="w-32 mb-2" /> 
+    <div class="flex items-center gap-4 mb-2">
+      <img src={Brand.src} alt="CAN Logo" class="size-20 md:size-24 lg:size-28" />
+      <img src={Sorab.src} alt="Sorab Logo" class="h-12 md:h-16 lg:h-20 w-auto" />
+    </div>
     <div class="flex flex-col md:flex-row gap-12 flex-1 justify-between">
       <div>
         <div class="font-medium mb-2">Home</div>
@@ -33,7 +37,7 @@ import Brand from "../assets/icons/brand.svg";
       <div>
         <div class="font-medium mb-2 tracking-widest">CONTACT</div>
         <ul class="space-y-1 text-base">
-          <li><a href="mailto:sales@cansignage.com" class="underline hover:text-black">sales@sorabent.com</a></li>
+          <li><a href="mailto:sales@sorabent.com" class="underline hover:text-black">sales@sorabent.com</a></li>
           <li>Office: +65 6224 8816</li>
           <li class="text-xs leading-5 mt-2">10, Ubi Crescent, Lobby E <br/> #02-93, Ubi Techpark, <br/>Singapore 408564.</li>
         </ul>

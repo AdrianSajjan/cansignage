@@ -1,0 +1,107 @@
+{
+  "CANNX": {
+    "models": [
+      {
+        "name": "CANNX 3201",
+        "size": "32\u201d",
+        "resolution": "1366 x 768 pixels",
+        "colours": "16.7 M",
+        "brightness": "300 Nits"
+      },
+      {
+        "name": "CANNX Pro 4301",
+        "size": "43\u201d",
+        "resolution": "1080 x 1920 pixels",
+        "colours": "16.7 M",
+        "brightness": "350 Nits"
+      },
+      {
+        "name": "CANNX Pro+ 5001",
+        "size": "50\u201d",
+        "resolution": "2160 x 3840 pixels",
+        "colours": "16.7 M",
+        "brightness": "380 Nits"
+      },
+      {
+        "name": "CANNX Max 5501",
+        "size": "55\u201d",
+        "resolution": "2160 x 3840 pixels",
+        "colours": "16.7 M",
+        "brightness": "380 Nits"
+      },
+      {
+        "name": "CANNX Max+ 6501",
+        "size": "65\u201d",
+        "resolution": "2160 x 3840 pixels",
+        "colours": "16.7 M",
+        "brightness": "380 Nits"
+      }
+    ],
+    "LED_DISPLAY": {
+      "colours": "16.7 M",
+      "aspect_ratio": "9:16",
+      "viewing_angle": "178\u00b0/178\u00b0",
+      "motion_rate": "60 Hz",
+      "contrast_ratio": "100000:1 (Static)"
+    },
+    "10W_AUDIO": {
+      "audio_output": "10W",
+      "speakers": 2
+    },
+    "HARDWARE": {
+      "RAM": "1 GB",
+      "storage_ROM": "8 GB"
+    },
+    "CONNECTIVITY": {
+      "RJ45_LAN": true
+    },
+    "EXTRA_FEATURES": [
+      "Auto On",
+      "Blue Back",
+      "Media Center",
+      "Panel Type \u2013 A+ Grade Panel",
+      "Local Keyboard \u2013 Single Key Operation",
+      "Colour Temperature \u2013 Auto",
+      "Software Languages \u2013 Multiple"
+    ],
+    "icons_key_features": [
+      "Inbuilt Editor (Image & Video)",
+      "Continuous Scrolling Text Effect",
+      "Multi-level Authentication",
+      "User Friendly UI / UX",
+      "Toughened Glass Body Protection"
+    ],
+    "product_dimensions_weight": [
+      {
+        "model": "CANNX 3201",
+        "dimensions_inch": "17.08 x 28.16 x 1.68",
+        "net_weight_kg": 4.1,
+        "gross_weight_kg": 5.1
+      },
+      {
+        "model": "CANNX Pro 4301",
+        "dimensions_inch": "22.13 x 37.18 x 2.30",
+        "net_weight_kg": 5.8,
+        "gross_weight_kg": 7.64
+      },
+      {
+        "model": "CANNX Pro+ 5001",
+        "dimensions_inch": "43.18 x 25.16 x 1.70",
+        "net_weight_kg": 9.15,
+        "gross_weight_kg": 11.95
+      },
+      {
+        "model": "CANNX Max 5501",
+        "dimensions_inch": "48.08 x 28.08 x 1.70",
+        "net_weight_kg": 11.42,
+        "gross_weight_kg": 14.6
+      },
+      {
+        "model": "CANNX Max+ 6501",
+        "dimensions_inch": "57 x 32.7 x 1.70",
+        "net_weight_kg": 15,
+        "gross_weight_kg": 19
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "CANLit": {
+    "models": [
+      {
+        "name": "CANLit 3201",
+        "size": "32”",
+        "resolution": "768 x 1366 pixels",
+        "colours": "16.7 M",
+        "brightness": "300 Nits"
+      },
+      {
+        "name": "CANLit Pro 4301",
+        "size": "43”",
+        "resolution": "1080 x 1920 pixels",
+        "colours": "16.7 M",
+        "brightness": "380 Nits"
+      }
+    ],
+    "LED_DISPLAY": {
+      "colours": "16.7 M",
+      "aspect_ratio": "9:16",
+      "viewing_angle": "178°/178°",
+      "motion_rate": "60 Hz",
+      "contrast_ratio": "100000:1 (Static)"
+    },
+    "10W_AUDIO": {
+      "audio_output": "10W",
+      "speakers": 2
+    },
+    "HARDWARE": {
+      "RAM": "1 GB",
+      "storage_ROM": "8 GB"
+    },
+    "CONNECTIVITY": {
+      "RJ45_LAN": true
+    },
+    "EXTRA_FEATURES": [
+      "Auto On",
+      "Blue Back",
+      "Media Center",
+      "Panel Type – A+ Grade Panel",
+      "Local Keyboard – Single Key Operation",
+      "Colour Temperature – Auto",
+      "Software Languages – Multiple"
+    ],
+    "icons_key_features": [
+      "Inbuilt Editor (Image & Video)",
+      "Continuous Scrolling Text Effect",
+      "Multi-level Authentication",
+      "User Friendly UI / UX",
+      "Toughened Glass Body Protection"
+    ],
+    "product_dimensions_weight": [
+      {
+        "model": "CANLit 3201",
+        "dimensions_inch": "18.01 x 69.13 x 2.35",
+        "net_weight_kg": 19.5,
+        "gross_weight_kg": 24,
+        "radius_inch": 15
+      },
+      {
+        "model": "CANLit Pro 4301",
+        "dimensions_inch": "22.06 x 76.01 x 2.65",
+        "net_weight_kg": 27.9,
+        "gross_weight_kg": 32.5,
+        "radius_inch": 15
+      }
+    ]
+  }
+}

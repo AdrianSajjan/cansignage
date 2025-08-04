@@ -1,0 +1,287 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import cannxData from "../../products/cannx.json";
+import cannxImg from "../../assets/products/cannx.png";
+
+const product = cannxData.CANNX;
+---
+
+<Layout header="dark">
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-black text-white pt-32 pb-16">
+      <div class="container max-w-screen-2xl mx-auto px-8 md:px-12 xl:px-20">
+        <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+          <a href="/" class="hover:text-white transition-colors">Home</a>
+          <span>→</span>
+          <a href="/products" class="hover:text-white transition-colors">Products</a>
+          <span>→</span>
+          <span class="text-white">CANNX</span>
+        </nav>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="w-full h-px bg-white/20 mb-8">
+              <div class="w-1/5 h-px bg-white"></div>
+            </div>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-heading font-light mb-6">
+              CANNX
+            </h1>
+            <p class="text-xl text-gray-300 mb-8">
+              Ultra-Slim Premium Display Series
+            </p>
+            <p class="text-lg text-gray-400 leading-relaxed">
+              CANNX represents the pinnacle of slim design and advanced display technology. With ultra-thin profiles and lightweight construction, these displays offer exceptional performance while maintaining minimal space requirements, perfect for modern installations.
+            </p>
+          </div>
+          <div class="aspect-video bg-white rounded-2xl overflow-hidden">
+            <img 
+              src={cannxImg.src} 
+              alt="CANNX"
+              class="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Models Section -->
+    <section class="bg-gray-50 text-black py-16">
+      <div class="container max-w-screen-2xl mx-auto px-8 md:px-12 xl:px-20">
+        <h2 class="text-3xl md:text-4xl font-heading font-light mb-12 text-center">
+          Available Models
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {product.models.map((model) => (
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+              <h3 class="text-2xl font-heading font-semibold text-black mb-4">
+                {model.name}
+              </h3>
+              <div class="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="font-medium text-gray-600">Size:</span>
+                  <p class="text-black">{model.size}</p>
+                </div>
+                <div>
+                  <span class="font-medium text-gray-600">Resolution:</span>
+                  <p class="text-black">{model.resolution}</p>
+                </div>
+                <div>
+                  <span class="font-medium text-gray-600">Colors:</span>
+                  <p class="text-black">{model.colours}</p>
+                </div>
+                <div>
+                  <span class="font-medium text-gray-600">Brightness:</span>
+                  <p class="text-black">{model.brightness}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="bg-white text-black py-16">
+      <div class="container max-w-screen-2xl mx-auto px-8 md:px-12 xl:px-20">
+        <h2 class="text-3xl md:text-4xl font-heading font-light mb-12 text-center">
+          Key Features
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {product.icons_key_features.map((feature) => (
+            <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+              <!-- Placeholder for feature icon -->
+              <div class="w-8 h-8 bg-gray-300 rounded flex-shrink-0 flex items-center justify-center">
+                <span class="text-xs text-gray-600">🔧</span>
+              </div>
+              <p class="text-gray-700">{feature}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Specifications Section -->
+    <section class="bg-gray-50 text-black py-16">
+      <div class="container max-w-screen-2xl mx-auto px-8 md:px-12 xl:px-20">
+        <h2 class="text-3xl md:text-4xl font-heading font-light mb-12 text-center">
+          Technical Specifications
+        </h2>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Display Specs -->
+          <div class="bg-white rounded-xl p-6 shadow-sm">
+            <h3 class="text-xl font-heading font-semibold mb-4 flex items-center gap-2">
+              <!-- Placeholder for display icon -->
+              <div class="w-6 h-6 bg-gray-300 rounded flex items-center justify-center">
+                <span class="text-xs">📺</span>
+              </div>
+              LED Display
+            </h3>
+            <div class="space-y-3">
+              <div class="flex justify-between">
+                <span class="text-gray-600">Colors:</span>
+                <span class="font-medium">{product.LED_DISPLAY.colours}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Aspect Ratio:</span>
+                <span class="font-medium">{product.LED_DISPLAY.aspect_ratio}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Viewing Angle:</span>
+                <span class="font-medium">{product.LED_DISPLAY.viewing_angle}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Motion Rate:</span>
+                <span class="font-medium">{product.LED_DISPLAY.motion_rate}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Contrast Ratio:</span>
+                <span class="font-medium">{product.LED_DISPLAY.contrast_ratio}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Audio Specs -->
+          <div class="bg-white rounded-xl p-6 shadow-sm">
+            <h3 class="text-xl font-heading font-semibold mb-4 flex items-center gap-2">
+              <!-- Placeholder for audio icon -->
+              <div class="w-6 h-6 bg-gray-300 rounded flex items-center justify-center">
+                <span class="text-xs">🔊</span>
+              </div>
+              Audio System
+            </h3>
+            <div class="space-y-3">
+              <div class="flex justify-between">
+                <span class="text-gray-600">Audio Output:</span>
+                <span class="font-medium">{product["10W_AUDIO"].audio_output}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Speakers:</span>
+                <span class="font-medium">{product["10W_AUDIO"].speakers}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hardware Specs -->
+          <div class="bg-white rounded-xl p-6 shadow-sm">
+            <h3 class="text-xl font-heading font-semibold mb-4 flex items-center gap-2">
+              <!-- Placeholder for hardware icon -->
+              <div class="w-6 h-6 bg-gray-300 rounded flex items-center justify-center">
+                <span class="text-xs">💾</span>
+              </div>
+              Hardware
+            </h3>
+            <div class="space-y-3">
+              <div class="flex justify-between">
+                <span class="text-gray-600">RAM:</span>
+                <span class="font-medium">{product.HARDWARE.RAM}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Storage (ROM):</span>
+                <span class="font-medium">{product.HARDWARE.storage_ROM}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connectivity -->
+          <div class="bg-white rounded-xl p-6 shadow-sm">
+            <h3 class="text-xl font-heading font-semibold mb-4 flex items-center gap-2">
+              <!-- Placeholder for connectivity icon -->
+              <div class="w-6 h-6 bg-gray-300 rounded flex items-center justify-center">
+                <span class="text-xs">🌐</span>
+              </div>
+              Connectivity
+            </h3>
+            <div class="space-y-3">
+              <div class="flex justify-between">
+                <span class="text-gray-600">RJ45 LAN:</span>
+                <span class="font-medium">{product.CONNECTIVITY.RJ45_LAN ? 'Yes' : 'No'}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dimensions & Weight Section -->
+    <section class="bg-white text-black py-16">
+      <div class="container max-w-screen-2xl mx-auto px-8 md:px-12 xl:px-20">
+        <h2 class="text-3xl md:text-4xl font-heading font-light mb-12 text-center">
+          Dimensions & Weight
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {product.product_dimensions_weight.map((item) => (
+            <div class="bg-gray-50 rounded-xl p-6">
+              <h3 class="text-xl font-heading font-semibold text-black mb-4">
+                {item.model}
+              </h3>
+              <div class="space-y-3 text-sm">
+                <div>
+                  <span class="font-medium text-gray-600">Dimensions (inch):</span>
+                  <p class="text-black">{item.dimensions_inch}</p>
+                </div>
+                <div>
+                  <span class="font-medium text-gray-600">Net Weight:</span>
+                  <p class="text-black">{item.net_weight_kg} kg</p>
+                </div>
+                <div>
+                  <span class="font-medium text-gray-600">Gross Weight:</span>
+                  <p class="text-black">{item.gross_weight_kg} kg</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Extra Features Section -->
+    <section class="bg-gray-50 text-black py-16">
+      <div class="container max-w-screen-2xl mx-auto px-8 md:px-12 xl:px-20">
+        <h2 class="text-3xl md:text-4xl font-heading font-light mb-12 text-center">
+          Additional Features
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {product.EXTRA_FEATURES.map((feature) => (
+            <div class="flex items-center gap-3 p-4 bg-white rounded-lg">
+              <span class="text-green-600 font-bold text-lg">✓</span>
+              <span class="text-gray-700">{feature}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-black text-white py-16">
+      <div class="container max-w-screen-2xl mx-auto px-8 md:px-12 xl:px-20">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-heading font-light mb-4">
+            Ready to Get Started?
+          </h2>
+          <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+            Contact our team to discuss your requirements and get a customized quote for your CANNX installation.
+          </p>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a 
+            href="/contact" 
+            class="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-lg font-heading font-medium hover:bg-gray-100 transition-colors group"
+          >
+            <span>Request Quote</span>
+            <span class="transition-transform group-hover:rotate-45">→</span>
+          </a>
+          <a 
+            href="/products" 
+            class="inline-flex items-center gap-3 border border-white/20 text-white px-8 py-4 rounded-lg font-heading font-medium hover:bg-white/10 transition-colors group"
+          >
+            <span>View All Products</span>
+            <span class="transition-transform group-hover:rotate-45">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

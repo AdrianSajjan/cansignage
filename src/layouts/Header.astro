@@ -1,5 +1,6 @@
 ---
 import Brand from "../assets/icons/brand.svg";
+import Sorab from "../assets/Sorab.png";
 
 const { theme = "light" } = Astro.props;
 ---
@@ -44,11 +45,18 @@ const { theme = "light" } = Astro.props;
   <div
     class="container max-w-screen-2xl mx-auto flex items-center justify-between px-8 md:px-12 lg:px-16 xl:px-20"
   >
-    <img
-      src={Brand.src}
-      data-theme={theme}
-      class="size-20 md:size-24 lg:size-28 transition-all duration-300 data-[theme=dark]:brightness-0 data-[theme=dark]:invert"
-    />
+    <div class="flex items-center gap-4">
+      <img
+        src={Brand.src}
+        data-theme={theme}
+        class="size-20 md:size-24 lg:size-28 transition-all duration-300 data-[theme=dark]:brightness-0 data-[theme=dark]:invert"
+      />
+      <img
+        src={Sorab.src}
+        data-theme={theme}
+        class="h-12 md:h-16 lg:h-20 w-auto transition-all duration-300 data-[theme=dark]:brightness-0 data-[theme=dark]:invert"
+      />
+    </div>
     <nav class="hidden md:flex items-center space-x-8">
       <a
         href="/"

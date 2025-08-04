@@ -6,6 +6,54 @@ import HeroOverlay from "../assets/images/home/hero-overlay.avif";
 import GlassScreen from "../assets/images/home/glass-screen.avif";
 import HeroBackground from "../assets/images/home/hero-background.avif";
 import ResolutionRedefined from "../assets/images/home/resolution-redefined.avif";
+
+// Import product images
+import canlitImg from "../assets/products/canlit.png";
+import canwalkImg from "../assets/products/canwalk.png";
+import canmountImg from "../assets/products/canmount.png";
+import can3201Img from "../assets/products/can.png";
+import cannxImg from "../assets/products/cannx.png";
+import canvueImg from "../assets/products/canvue.png";
+
+// Product data for carousel
+const products = [
+  {
+    id: "canlit",
+    name: "CANLit",
+    description: "Professional LED Display Solution",
+    image: canlitImg
+  },
+  {
+    id: "canwalk", 
+    name: "CANWalk",
+    description: "Portable Display with Built-in Battery",
+    image: canwalkImg
+  },
+  {
+    id: "canmount",
+    name: "CANMount", 
+    description: "Versatile Mounting Display Solution",
+    image: canmountImg
+  },
+  {
+    id: "can3201",
+    name: "CAN 3201",
+    description: "Professional Digital Signage Display",
+    image: can3201Img
+  },
+  {
+    id: "cannx",
+    name: "CANNX",
+    description: "Ultra-Slim Premium Display Series", 
+    image: cannxImg
+  },
+  {
+    id: "canvue",
+    name: "CANVue",
+    description: "Premium Mobile Display Solutions",
+    image: canvueImg
+  }
+];
 ---
 
 <Layout header="dark">
@@ -174,28 +222,129 @@ import ResolutionRedefined from "../assets/images/home/resolution-redefined.avif
         <h2 class="text-4xl sm:text-5xl md:text-6xl xl:text-7xl mt-10 leading-tight">
           Different Styles, For Different Spaces
         </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto mt-24">
-          <article
-            class="bg-white text-black brightness-75 hover:brightness-100 rounded-2xl p-6"
-          >
-            <p class="text-sm font-medium mb-px">CANLit</p>
-            <p>Best and brightest</p>
-            <img src={Screenshot.src} alt="CANLit" class="mt-8" />
-          </article>
-          <article
-            class="bg-white text-black brightness-75 hover:brightness-100 rounded-2xl p-6"
-          >
-            <p class="text-sm font-medium mb-px">CANMount</p>
-            <p>True-to-life display</p>
-            <img src={Screenshot.src} alt="CANLit" class="mt-8" />
-          </article>
-          <article
-            class="bg-white text-black brightness-75 hover:brightness-100 rounded-2xl p-6"
-          >
-            <p class="text-sm font-medium mb-px">CANVue</p>
-            <img src={Screenshot.src} alt="CANLit" class="mt-8" />
-          </article>
+        <!-- Products Carousel -->
+        <div class="mt-24 relative">
+          <!-- Carousel Container -->
+          <div class="overflow-hidden">
+            <div id="products-carousel" class="flex transition-transform duration-500 ease-in-out">
+              {products.map((product, index) => (
+                <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-4">
+                  <a href={`/products/${product.id}`} class="block">
+                    <article class="bg-white text-black brightness-75 hover:brightness-100 rounded-2xl p-6 transition-all duration-300 cursor-pointer">
+                      <p class="text-sm font-medium mb-px">{product.name}</p>
+                      <p class="text-gray-700 mb-6">{product.description}</p>
+                      <div class="aspect-video bg-white rounded-lg overflow-hidden">
+                        <img 
+                          src={product.image.src} 
+                          alt={product.name} 
+                          class="w-full h-full object-contain" 
+                        />
+                      </div>
+                    </article>
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <!-- Carousel Navigation -->
+          <div class="flex justify-center items-center mt-8 gap-4">
+            <button 
+              id="prev-btn" 
+              class="bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-colors"
+              aria-label="Previous products"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            
+            <!-- Dots Indicator -->
+            <div id="carousel-dots" class="flex gap-2">
+              {products.map((_, index) => (
+                <button 
+                  class={`w-2 h-2 rounded-full transition-colors ${index === 0 ? 'bg-white' : 'bg-white/40'}`}
+                  data-slide={index}
+                  aria-label={`Go to slide ${index + 1}`}
+                ></button>
+              ))}
+            </div>
+            
+            <button 
+              id="next-btn" 
+              class="bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-colors"
+              aria-label="Next products"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
         </div>
+
+        <!-- Carousel JavaScript -->
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.getElementById('products-carousel');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const dots = document.querySelectorAll('#carousel-dots button');
+            
+            let currentSlide = 0;
+            const totalSlides = Math.ceil(6 / getItemsPerSlide());
+            
+            function getItemsPerSlide() {
+              if (window.innerWidth >= 1024) return 3; // lg
+              if (window.innerWidth >= 640) return 2;  // sm
+              return 1; // mobile
+            }
+            
+            function updateCarousel() {
+              const itemsPerSlide = getItemsPerSlide();
+              const translateX = -(currentSlide * (100 / itemsPerSlide));
+              carousel.style.transform = `translateX(${translateX}%)`;
+              
+              // Update dots
+              dots.forEach((dot, index) => {
+                dot.classList.toggle('bg-white', index === currentSlide);
+                dot.classList.toggle('bg-white/40', index !== currentSlide);
+              });
+            }
+            
+            function nextSlide() {
+              currentSlide = (currentSlide + 1) % totalSlides;
+              updateCarousel();
+            }
+            
+            function prevSlide() {
+              currentSlide = currentSlide === 0 ? totalSlides - 1 : currentSlide - 1;
+              updateCarousel();
+            }
+            
+            // Event listeners
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+            
+            dots.forEach((dot, index) => {
+              dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel();
+              });
+            });
+            
+            // Auto-slide (optional)
+            setInterval(nextSlide, 5000);
+            
+            // Handle resize
+            window.addEventListener('resize', () => {
+              const newTotalSlides = Math.ceil(6 / getItemsPerSlide());
+              if (newTotalSlides !== totalSlides) {
+                currentSlide = 0;
+                updateCarousel();
+              }
+            });
+          });
+        </script>
       </div>
     </section>
   </main>

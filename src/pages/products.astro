@@ -1,5 +1,76 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import canlitData from "../products/canlit.json";
+import canwalkData from "../products/canwalk.json";
+import canmountData from "../products/canmount.json";
+import can3201Data from "../products/can3201.json";
+import cannxData from "../products/cannx.json";
+import canvueData from "../products/canvue.json";
+
+// Import product images
+import canlitImg from "../assets/products/canlit.png";
+import canwalkImg from "../assets/products/canwalk.png";
+import canmountImg from "../assets/products/canmount.png";
+import can3201Img from "../assets/products/can.png";
+import cannxImg from "../assets/products/cannx.png";
+import canvueImg from "../assets/products/canvue.png";
+
+const products = [
+  {
+    id: "canlit",
+    name: "CANLit",
+    description: "Professional LED Display Solution",
+    models: canlitData.CANLit.models.length,
+    startingPrice: "From S$1,088",
+    image: canlitImg,
+    jsonData: canlitData.CANLit
+  },
+  {
+    id: "canwalk",
+    name: "CANWalk",
+    description: "Portable LED Display with Built-in Battery",
+    models: canwalkData.CANWalk.models.length,
+    startingPrice: "From S$1,288",
+    image: canwalkImg,
+    jsonData: canwalkData.CANWalk
+  },
+  {
+    id: "canmount",
+    name: "CANMount",
+    description: "Versatile Mounting Display Solution",
+    models: canmountData.CANMount.models.length,
+    startingPrice: "From S$988",
+    image: canmountImg,
+    jsonData: canmountData.CANMount
+  },
+  {
+    id: "can3201",
+    name: "CAN 3201",
+    description: "Professional Digital Signage Display",
+    models: can3201Data.CAN.models.length,
+    startingPrice: "From S$1,188",
+    image: can3201Img,
+    jsonData: can3201Data.CAN
+  },
+  {
+    id: "cannx",
+    name: "CANNX",
+    description: "Ultra-Slim Premium Display Series",
+    models: cannxData.CANNX.models.length,
+    startingPrice: "From S$1,488",
+    image: cannxImg,
+    jsonData: cannxData.CANNX
+  },
+  {
+    id: "canvue",
+    name: "CANVue",
+    description: "Premium Mobile Display Solutions",
+    models: canvueData.CANVue.models.length,
+    startingPrice: "From S$1,688",
+    image: canvueImg,
+    jsonData: canvueData.CANVue
+  }
+];
 ---
 
 <Layout header="dark">
@@ -21,6 +92,74 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </section>
 
-    <!-- Products content will go here -->
+    <!-- Products Grid Section -->
+    <section class="bg-gray-50 text-black py-24">
+      <div class="container max-w-screen-2xl mx-auto px-8 md:px-12 xl:px-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((product) => (
+            <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer">
+              <a href={`/products/${product.id}`} class="block">
+                <div class="aspect-video bg-white overflow-hidden">
+                  <img 
+                    src={product.image.src} 
+                    alt={product.name}
+                    class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div class="p-6">
+                  <div class="flex items-start justify-between mb-4">
+                    <div>
+                      <h3 class="text-xl font-heading font-semibold text-black group-hover:text-gray-700 transition-colors">
+                        {product.name}
+                      </h3>
+                      <p class="text-gray-600 text-sm mt-1">
+                        {product.description}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-center justify-between mt-6">
+                    <div>
+                      <p class="text-2xl font-light text-black">
+                        {product.startingPrice}
+                      </p>
+                      <p class="text-sm text-gray-500">
+                        {product.models} model{product.models > 1 ? 's' : ''} available
+                      </p>
+                      <p class="text-xs text-gray-400 mt-1">
+                        {product.jsonData.LED_DISPLAY.colours} • {product.jsonData.LED_DISPLAY.aspect_ratio}
+                      </p>
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-700 group-hover:text-black transition-colors">
+                      <span class="text-sm font-heading font-normal tracking-wide">VIEW DETAILS</span>
+                      <span class="transition-transform group-hover:rotate-45">→</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="bg-black text-white py-16">
+      <div class="container max-w-screen-2xl mx-auto px-8 md:px-12 xl:px-20 text-center">
+        <h2 class="text-3xl md:text-4xl font-heading font-light mb-8">
+          Need Help Choosing?
+        </h2>
+        <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+          Our team of experts can help you find the perfect display solution for your specific needs and space requirements.
+        </p>
+        <a 
+          href="/contact" 
+          class="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-lg font-heading font-medium hover:bg-gray-100 transition-colors group"
+        >
+          <span>Contact Our Experts</span>
+          <span class="transition-transform group-hover:rotate-45">→</span>
+        </a>
+      </div>
+    </section>
   </main>
 </Layout>
